@@ -19,12 +19,12 @@ section{
     align-items: center;
 }
 section>div{
-    width: 100px;
+    /* width: 100px;
     height: 100px;
     background: #ccc;
     border-radius: 50%;
     text-align: center;
-    line-height: 100px;
+    line-height: 100px; */
 }
 footer{
     display: flex;
