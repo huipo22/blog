@@ -117,12 +117,27 @@
             left: 40%;
             transform: translate(-40%, -40%);
         }
-        .hidden{
+
+        .hidden {
             visibility: hidden;
         }
-        .visable{
-            visibility:visible;
+
+        .visable {
+            visibility: visible;
         }
+
+        @media screen and (min-width: 320px) and (max-width: 480px) {
+            .top_right {
+                color: #fff;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                letter-spacing: 3px;
+                font-size: 12px;
+                left: 0;
+                width: 100%;
+                top: auto;
+            }
     </style>
 </head>
 
@@ -156,30 +171,30 @@
         </div>
     </section>
     <script>
-        window.onload=function(){
-            setTimeout(function(){
+        window.onload = function () {
+            setTimeout(function () {
                 $('#bg_top').addClass('visable animated bouncelnDown')
-            },2000)
-            setTimeout(function(){
+            }, 2000)
+            setTimeout(function () {
                 $('.top_left>img').addClass('visable animated bounce')
-            },3000)
-            setTimeout(function(){
+            }, 3000)
+            setTimeout(function () {
                 $('.top_right').addClass('visable animated bounce')
-            },4000)
-            setTimeout(function(){
+            }, 4000)
+            setTimeout(function () {
                 $('.center').addClass('visable animated rotateIn')
-            },5000)
-            setTimeout(function(){
+            }, 5000)
+            setTimeout(function () {
                 $('.container').addClass('visable animated rotateOut')
                 $('.container2').addClass('visable  animated zoomIn')
-            },6000)
-            setTimeout(function(){
+            }, 8000)
+            setTimeout(function () {
                 $('.lefticon>img').addClass('visable animated slideInRight')
                 $('.righticon>img').addClass('visable animated slideInLeft')
-            },7000)
-            setTimeout(function(){
+            }, 9000)
+            setTimeout(function () {
                 $('.center_wechat').addClass('visable  animated rotateInDownRight')
-            },8000)
+            }, 10000)
         }
     </script>
 </body>
