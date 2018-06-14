@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>完美合金</title>
+    <!--[if lt IE 9]> 您的浏览器不支持css3 <![endif]-->
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    <link href="https://cdn.bootcss.com/minireset.css/0.0.2/minireset.css" rel="stylesheet">
+    <link href="https://cdn.bootcss.com/animate.css/3.5.2/animate.css" rel="stylesheet">
+    <style>
+        body {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        section {
+            width: 85%;
+            position: relative;
+        }
+
+        .container {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            /* border: 1px solid red; */
+            overflow: hidden;
+            /* background-image: url('./images/home.png');
+            background-repeat: no-repeat;
+            background-origin: border-box;
+            background-position: center;
+            background-size: 100%; */
+        }
+
+        .bg_img {
+            height: 100%;
+            width: 100%;
+        }
+
+        .top {
+            position: absolute;
+            width: 100%;
+            /* height: 8%;
+            top: 0;
+            left: 0;
+            background-image: url('./images/bg_top.png'); */
+        }
+
+        .top_left {
+            width: 20%;
+            height: 100%;
+            float: left;
+            position: absolute;
+            top: 0;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            /* border: 1px solid red; */
+        }
+
+        .top_right {
+            width: 80%;
+            height: 100%;
+            float: right;
+            color: #fff;
+            position: absolute;
+            top: 0;
+            left: 20%;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            padding-left: 2%;
+            /* border: 1px solid; */
+            letter-spacing: 3px;
+            font-size: 12px;
+        }
+
+        .center {
+            width: 100%;
+            position: absolute;
+            top: 55%;
+            color: #fff;
+            text-align: center;
+            letter-spacing: 5px;
+            font-size: 14px;
+        }
+
+        .container2 {
+            position: absolute;
+            top: 0;
+        }
+
+        .lefticon {
+            position: absolute;
+            left: 0;
+            bottom: 2%;
+            width: 10%;
+        }
+
+        .righticon {
+            position: absolute;
+            top: 2%;
+            right: 0;
+            width: 10%;
+        }
+
+        .center_wechat {
+            width: 20%;
+            position: absolute;
+            top: 40%;
+            left: 40%;
+            transform: translate(-40%, -40%);
+        }
+        .hidden{
+            visibility: hidden;
+        }
+        .visable{
+            visibility:visible;
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <div class="container">
+            <div class="top">
+                <!-- <img class="animated bouncelnDown" src="./images/bg_top.png" alt="" id="bg_top"> -->
+                <img src="./images/bg_top.png" alt="" class="hidden" id="bg_top">
+                <div class="top_left">
+                    <img src="./images/logo.png" alt="" width="65%" class="hidden">
+                </div>
+                <div class="top_right hidden">
+                    重庆.文理学院/哈尔滨.职业技术学院/太原.理工现代科技学院/黑龙江.大学
+                </div>
+            </div>
+            <div class="center hidden">中国校园健身空间领导品牌</div>
+            <img class="bg_img" src="./images/home.png" alt="">
+        </div>
+        <div class="container2 hidden">
+            <div class="lefticon">
+                <img class=" hidden" src="./images/left_icon.png" alt="">
+            </div>
+            <div class="righticon">
+                <img class=" hidden" src="./images/right_icon.png" alt="">
+            </div>
+            <div class="center_wechat hidden">
+                <img src="./images/wechat.png" alt="">
+            </div>
+            <img src="./images/second_bg.png" alt="">
+        </div>
+    </section>
+    <script>
+        $(function(){
+            setTimeout(function(){
+                $('#bg_top').addClass('visable animated bouncelnDown')
+            },2000)
+            setTimeout(function(){
+                $('.top_left>img').addClass('visable animated bounce')
+            },3000)
+            setTimeout(function(){
+                $('.top_right').addClass('visable animated bounce')
+            },4000)
+            setTimeout(function(){
+                $('.center').addClass('visable animated rotateIn')
+            },5000)
+            setTimeout(function(){
+                $('.container').addClass('visable animated rotateOut')
+                $('.container2').addClass('visable  animated zoomIn')
+            },6000)
+            setTimeout(function(){
+                $('.lefticon>img').addClass('visable animated slideInRight')
+                $('.righticon>img').addClass('visable animated slideInLeft')
+            },7000)
+            setTimeout(function(){
+                $('.center_wechat').addClass('visable  animated rotateInDownRight')
+            },8000)
+        })
+    </script>
+</body>
+
+</html>
