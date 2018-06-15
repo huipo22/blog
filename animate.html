@@ -13,6 +13,11 @@
     <link href="https://cdn.bootcss.com/minireset.css/0.0.2/minireset.css" rel="stylesheet">
     <link href="https://cdn.bootcss.com/animate.css/3.5.2/animate.css" rel="stylesheet">
     <style>
+        @font-face {
+            font-family: SimHei;
+            src:url('./font/simhei.ttf')
+        }
+
         body {
             width: 100%;
             height: 100vh;
@@ -101,7 +106,7 @@
             text-align: center;
             letter-spacing: 1.4vw;
             font-size: 1.4vw;
-            font-family: "SimHei,Microsoft YaHei,SimSun";
+            font-family: "SimHei";
             left: 50%;
             transform: translateX(-50%);
         }
@@ -145,7 +150,6 @@
         #bg_top {
             display: flex;
         }
-
     </style>
 </head>
 
@@ -163,7 +167,7 @@
                     <img src="./images/font.png" alt="" width="90%">
                 </div>
             </div>
-            <div class="center hidden">中国校园健身空间领导品牌</div>
+            <div class="center hidden">中国校园运动空间领导品牌</div>
             <img class="bg_img" src="./images/home_bg.png" alt="">
         </div>
         <div class="container2 hidden">
@@ -214,21 +218,21 @@
             setTimeout(function () {
                 // $('.center').addClass('visable animated rotateIn')
                 $(".center").animatext({
-                    speed: 500
+                    speed: 350
                 });
             }, 5000)
             setTimeout(function () {
                 $('.container').addClass('visable animated fadeOut')
                 $('.container2').addClass('visable  animated fadeIn')
-            }, 15000)
+            }, 13000)
 
             setTimeout(function () {
                 $('.lefticon>img').addClass('visable animated slideInRight')
                 $('.righticon>img').addClass('visable animated slideInLeft')
-            }, 16000)
+            }, 14000)
             setTimeout(function () {
-                $('.center_wechat').addClass('visable  animated rotateInDownRight')
-            }, 17000)
+                $('.center_wechat').addClass('visable  animated fadeInDown')
+            }, 15000)
         }
     </script>
 </body>
