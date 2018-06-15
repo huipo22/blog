@@ -18,32 +18,69 @@
     <title>手机端</title>
     <style>
         /* 部分重置 */
+
         body {
             word-wrap: break-word;
             /* 这里是设置字体，Helvetica字体在移动端各系统都支持（都不支持微软雅黑） */
-            font: 16px/1.5 Helvetica, Arial; 
+            font: 16px/1.5 Helvetica, Arial;
             color: #333;
             /* 设置文本不会放大，普通网页在移动端打开文本是会跟随网页结构缩放的 */
-            -webkit-text-size-adjust: none; 
+            -webkit-text-size-adjust: none;
         }
 
         body * {
             /* 在一些手机上，如iphone，点击按钮等元素会出现点击态的背景色，设置为透明就看不出来了 */
-            -webkit-tap-highlight-color: transparent; 
+            -webkit-tap-highlight-color: transparent;
             /* 设置元素内的文字及其子元素将不会被选中 */
-            -webkit-user-select: none; 
+            -webkit-user-select: none;
+            margin: 0;
         }
 
-        section{
+
+        html,
+        body {
             width: 100%;
-            height: 2em;
-            border: 1px solid
+            height: 100%;
+            margin: 0;
+        }
+
+        .eg {
+            width: 50%;
+            height: 20em;
+            background: #ccc;
+            float: left;
+        }
+
+        .verticalcenter {
+            border: 1px solid;
+            position: relative;
+            top: 50%;
+            transform: translateY(-50%);
+            -webkit-transform: translateY(-50%);
+            -o-transform: translateY(-50%);
+            width: 100px;
+        }
+        .horizon{
+            border: 1px solid;
+            position: relative;
+            left: 50%;
+            transform: translateX(-50%);
+            -webkit-transform: translateX(-50%);
+            -o-transform: translateX(-50%);
+            width: 100px;
         }
     </style>
 </head>
 
 <body>
-    <section>456</section>
+    <section>
+        <div class="eg">
+            <div class="verticalcenter">垂直对齐</div>
+        </div>
+        <div class="eg">
+            <div class="horizon">水平对齐</div>
+        </div>
+    </section>
 </body>
 
 </html>
