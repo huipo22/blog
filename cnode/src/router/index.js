@@ -10,8 +10,8 @@ import Details from '../view/details/index'
 class RouterIndex extends Component {
     render() {
         return (
-            <Switch path="/" render={() => (
-                <Redirect to="/index"></Redirect>
+            <Switch path="/" exact render={() => (
+                <Redirect to="/index/all"></Redirect>
             )}>
                 <Route path="/index" component={Index}></Route>
                 <Route path="/book" component={Book}></Route>

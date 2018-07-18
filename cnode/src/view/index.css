@@ -1,4 +1,15 @@
+.pageWrap{
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+.wrap{
+    position: relative;
+    max-width:980px;
+    margin: 0 auto;
+}
 .headerDivider{
+    float: left;
     height: 44px;
     margin: 10px 0;
 }
@@ -7,10 +18,38 @@
     margin: 0 auto;
 }
 #logo{
-    color:#000;
+    color:#fff;
     margin-bottom:0;
     text-align: center;
 }
-.pageWrap{
-    min-height: 100vh
+
+#nav{
+    float: left;
+    background: none;
+    border:none;
+    line-height: 64px;
+}
+#nav a{
+    color:#fff
+}
+#nav .ant-menu-item-selected a{
+    color:red
+}
+.xsNav{
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: auto;
+}
+.main{
+    flex: 1
+}
+.main .wrap{
+    border: 1px solid #ccc;
+    border-top:none;
+}
+#indexMenu .ant-menu-item-selected{
+    border-right:3px solid #1890ff;
+}
+.indexList{
 }
