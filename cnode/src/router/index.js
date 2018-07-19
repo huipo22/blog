@@ -1,25 +1,19 @@
-import React, { Component } from 'react'
-import { Switch, Route, Redirect } from 'react-router-dom'
 
-import Index from '../view/index/index'
-import Book from '../view/book/index'
-import About from '../view/about/index'
-import User from '../view/user/index'
-import Details from '../view/details/index'
-
-class RouterIndex extends Component {
+import React, { Component } from "react";
+import { Switch, Route, Redirect } from "react-router-dom";
+import IndexList from "../view/index/list";
+export default class RouterList extends Component {
     render() {
         return (
-            <Switch path="/" exact render={() => (
-                <Redirect to="/index/all"></Redirect>
-            )}>
-                <Route path="/index" component={Index}></Route>
-                <Route path="/book" component={Book}></Route>
-                <Route path="/about" component={About}></Route>
-                <Route path="/user" component={User}></Route>
-                <Route path="/details" component={Details}></Route>
+            <Switch>
+                <Route path="/index" exact render={() => (<Redirect to="/index/all" />)} />
+                <Route path="/index/all" component={IndexList} />
+                <Route path="/index/ask" component={IndexList} />
+                <Route path="/index/share" component={IndexList} />
+                <Route path="/index/job" component={IndexList} />
+                <Route path="/index/dev" component={IndexList} />
+                <Route path="/index/good" component={IndexList} />
             </Switch>
-        )
+        );
     }
 }
-export default RouterIndex

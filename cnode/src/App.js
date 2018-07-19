@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import RouterIndex from './router/index'
+import RouterIndex from './router/router'
 
 import MainHeader from './view/main-header'
 import MainFooter from './view/main-footer'

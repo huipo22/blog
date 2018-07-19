@@ -1,31 +1,46 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
-import { Card, Avatar } from 'antd'
 import data from './data'
-import TxtTag from "../txtTag"
+import { connect } from 'react-redux'
+import TxtDetails from './txtDetails'
+import ReplyList from './replyList'
+import axios from 'axios'
 
 class Details extends Component {
+    constructor(arg) {
+        super(arg)
+        let id = this.props.match.params.id
+        this.getData(id)
+    }
+    getData(id) {
+        this.props.dispatch((dispatch) => {
+            dispatch({
+                type: "DETAILS_UPDATA"
+            })
+            axios.get(`https://cnodejs.org/api/v1/topic/${id}`).then((res) => {
+                dispatch({
+                    type: "DETAILS_UPDATA_SUCC",
+                    data: res
+                })
+            }).then((error) => {
+                dispatch({
+                    type: "DETAILS_UPDATA_ERROR",
+                })
+            })
+        })
+    }
     render() {
-        const title = (<div>
-            <h1>{data.data.title}</h1>
-            <div style={{
-                display:"flex",
-                alignItem:"center"
-            }}>
-                <TxtTag data={data.data} />
-                <Avatar src={data.data.author.author_url} />
-                <Link to={"/user/" + data.data.author.loginname}>{data.data.author.loginname}</Link>
-                发表于：{data.data.create_at.split('T')[0]}
-            </div>
-        </div>)
+        let { loading, data } = this.props
         return (
             <div className="wrap">
-                <Card title={title}></Card>
-                <div dangerouslySetInnerHTML={{
-                    __html:data.data.content
-                }}></div>
+                <TxtDetails
+                    loading={loading}
+                    data={data} />
+                <ReplyList
+                    loading={loading}
+                    replies={data.replies}
+                    replyCount={data.reply_count} />
             </div>
         )
     }
 }
-export default Details
+export default connect(state => state.details)(Details) 
