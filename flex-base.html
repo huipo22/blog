@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    .f1 {
+        width: 800px;
+        height: 500px;
+        background: #ccc;
+        display: flex;
+        flex-flow: row;
+        /* justify-content:spaxce-between  两端对齐  space-around 间距相等*/
+        /* justify-content: space-around; */
+        /* stretch 延伸 */
+        align-items: center;
+    }
+
+    .item {
+        width: 200px;
+        height: 200px;
+        border: 1px dashed;
+        box-sizing: border-box;
+        /* flex-shrink 默认值为1 0=>不缩小*/
+        flex-shrink: 0;
+    }
+
+    .ff {
+        order: 1
+    }
+
+    .item3 {
+        height: auto;
+        /*align-self 属性定义flex子项   单独在侧轴（纵轴）方向上的对齐方式。 */
+        align-self: stretch;
+    }
+</style>
+
+<body>
+    <div class="f1">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item item3">3</div>
+    </div>
+</body>
+
+</html>
