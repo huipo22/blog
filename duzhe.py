@@ -17,15 +17,16 @@ class InitSpider:
         for i in indexUrl:
             html=requests.get(i).json()
             for j in html:
-                for(k,v) in j.items():
-                    contentUrl.append('http://www.duzhe.com/{}'.format(j['url']))
+                contentUrl.append('http://www.duzhe.com/{}'.format(j['url']))
         return contentUrl
     def getContent(self,contentUrl):
         for i in contentUrl:
             html=requests.post(i,self.headers).content
             soup=BeautifulSoup(html,'lxml')
-            # print(soup.h1.string)
-            print(soup.select('div[class="detail_con"]'))
+            content=dict()
+            content['title']=soup.find('h1').string
+            content['content']=soup.find('div',attrs={'class':'detail_con'})
+            print(content)
 
 if __name__=='__main__':
     spider=InitSpider()

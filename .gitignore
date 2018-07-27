@@ -2,7 +2,7 @@
 
 # dependencies
 /cnode/node_modules
-
+/.vscode
 # testing
 /coverage
 
