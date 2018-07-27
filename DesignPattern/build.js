@@ -36,9 +36,9 @@ function Gongren() {
         return _hourse
     }
 }
-var gr = new Gongren()
-var gt = new Gongtou()
+var 工人 = new Gongren()
+var 工头 = new Gongtou()
 //工头盖房子
-gt.gaifangzi(gr)
+工头.gaifangzi(gr)
 //工人交房子
-console.log(gr.jiaofang())
+console.log(工人.jiaofang())
